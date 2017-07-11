@@ -32,15 +32,15 @@
       todomvc-app:
         image: ${DOCKER_REGISTRY:-registry.docker.local}/oss-todomvc-app:latest
         restart: 'always'
-        container_name: ${SPRING_APPLICATION_NAME:-oss-todomvc-app}_${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
-        hostname: ${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
+        container_name: ${SPRING_APPLICATION_NAME:-oss-todomvc-app}_${EUREKA_INSTANCE_HOSTNAME:-oss-todomvc-app.local}
+        hostname: ${EUREKA_INSTANCE_HOSTNAME:-oss-todomvc-app.local}
         ports:
         - "${EUREKA_INSTANCE_NONSECUREPORT:-8080}:${SERVER_PORT:-8080}"
         volumes:
         - oss-todomvc-app-volume:/root/data
         environment:
         - EUREKA_INSTANCE_NONSECUREPORT=${EUREKA_INSTANCE_NONSECUREPORT:-8080}
-        - EUREKA_INSTANCE_HOSTNAME=${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
+        - EUREKA_INSTANCE_HOSTNAME=${EUREKA_INSTANCE_HOSTNAME:-oss-todomvc-app.local}
         - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@eureka.local:8761/eureka/}
         - MANAGEMENT_CONTEXTPATH=${MANAGEMENT_CONTEXTPATH}
         - MANAGEMENT_PORT=${MANAGEMENT_PORT:-8080}
