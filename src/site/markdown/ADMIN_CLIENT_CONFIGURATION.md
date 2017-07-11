@@ -41,12 +41,12 @@
         environment:
         - EUREKA_INSTANCE_NONSECUREPORT=${EUREKA_INSTANCE_NONSECUREPORT:-8080}
         - EUREKA_INSTANCE_HOSTNAME=${EUREKA_INSTANCE_HOSTNAME:-local-oss-todomvc-app}
-        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@local-eureka:8761/eureka/}
+        - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:-http://user:user_pass@eureka.local:8761/eureka/}
         - MANAGEMENT_CONTEXTPATH=${MANAGEMENT_CONTEXTPATH}
         - MANAGEMENT_PORT=${MANAGEMENT_PORT:-8080}
         - SERVER_CONTEXTPATH=${SERVER_CONTEXTPATH}
         - SERVER_PORT=${SERVER_PORT:-8080}
-        - SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID=${SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID:-local-configserver}
+        - SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID=${SPRING_CLOUD_CONFIG_DISCOVERY_SERVICEID:-configserver.local}
 #### 注意事项
 虽然可以任意配置server,但在使用feign client的时候, 在制定RequestMapping的时候要把server context path和provider本身的RequestMapping拼接起来,使用的时候要尤其注意。
 ##### provider接口定义
@@ -81,12 +81,12 @@
     eureka:
       client:
         serviceUrl:
-          defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://user:user_pass@local-eureka:8761/eureka/}
+          defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE:http://user:user_pass@eureka.local:8761/eureka/}
       instance:
-        hostname: ${EUREKA_INSTANCE_HOSTNAME:local-${spring.application.name}}
+        hostname: ${EUREKA_INSTANCE_HOSTNAME:${spring.application.name}.local}
         nonSecurePort: ${EUREKA_INSTANCE_NONSECUREPORT:8080}
         prefer-ip-address: ${EUREKA_INSTANCE_PREFER_IP_ADDRESS:false}
-        instance-id: ${spring.application.name}:${EUREKA_INSTANCE_HOSTNAME:local-${spring.application.name}}:${EUREKA_INSTANCE_NONSECUREPORT:${SERVER_PORT:8080}}:${random.value}
+        instance-id: ${spring.application.name}:${EUREKA_INSTANCE_HOSTNAME:${spring.application.name}.local}:${EUREKA_INSTANCE_NONSECUREPORT:${SERVER_PORT:8080}}:${random.value}
         leaseRenewalIntervalInSeconds: 10
         statusPageUrlPath: ${server.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.info.path:/info}
         healthCheckUrlPath: ${server.context-path:${SERVER_CONTEXTPATH:}}${management.context-path:${MANAGEMENT_CONTEXTPATH:}}${endpoints.health.path:/health}
