@@ -122,7 +122,7 @@ admin支持客户端日志的实时查看，需要添加以下两个配置到
 ### 示例
     logging:
       file: ${LOGGING_FILE:oss-admin}.log
-      path: ${LOGGING_PATH:${user.home}/data/oss-admin/logs}
+      path: ${LOGGING_PATH:${user.home}/.oss/oss-admin/logs}
       
 ## management security配置
 该配置为spring boot应用的管理接口（主要是actuator提供的各个endpoints）提供基本的basic authentication。在没有其他安全策略的spring 
