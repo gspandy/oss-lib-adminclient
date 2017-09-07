@@ -1,3 +1,11 @@
+[![Build Status](https://travis-ci.org/home1-oss/oss-lib-adminclient.svg?branch=master)](https://travis-ci.org/home1-oss/oss-lib-adminclient)
+
+-----
+There are link issues on git service generated pages, see gitbook or maven site.
++ [gitbook](https://home1-oss.github.io/home1-oss-gitbook/release/docs/oss-lib-adminclient/)
++ [maven site](https://home1-oss.github.io/home1-oss/release/oss-lib-adminclient/index.html)
+-----
+
 # oss-lib-adminclient
 
 A enhanced client for oss-admin ([spring-boot-admin](https://github.com/codecentric/spring-boot-admin))
