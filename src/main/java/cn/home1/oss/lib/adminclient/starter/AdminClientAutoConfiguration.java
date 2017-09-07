@@ -26,7 +26,6 @@ import java.util.HashMap;
 
 /**
  * Created by Yuliang jin on 16/10/25.
- * TODO: Comments
  */
 @ConditionalOnClass(SecurityProperties.class)
 @AutoConfigureAfter(SecurityAutoConfiguration.class)

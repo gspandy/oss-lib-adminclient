@@ -30,8 +30,7 @@
     <body>
         <!--menu ref="parent" /-->
         <menu name="DOCUMENTATION">
-            <item href="README.html" name="oss-lib-adminclient说明文档" />
-            <item href="ADMIN_CLIENT_CONFIGURATION.html" name="oss-admin客户端配置说明" />
+            <item href="README.html" name="README" />
         </menu>
         <menu ref="modules" />
         <menu ref="reports" inherit="bottom" />

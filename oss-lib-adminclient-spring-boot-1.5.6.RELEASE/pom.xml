@@ -10,8 +10,8 @@
         <version>1.0.10.OSS-SNAPSHOT</version>
     </parent>
 
-    <artifactId>oss-lib-adminclient-spring-boot-1.4.2.RELEASE</artifactId>
-    <name>oss-lib-adminclient-spring-boot-1.4.2.RELEASE</name>
+    <artifactId>oss-lib-adminclient-spring-boot-1.5.6.RELEASE</artifactId>
+    <name>oss-lib-adminclient-spring-boot-1.5.6.RELEASE</name>
     <packaging>jar</packaging>
 
     <build>
@@ -23,7 +23,7 @@
         <dependencies>
             <dependency>
                 <groupId>cn.home1</groupId>
-                <artifactId>oss-common-dependencies-spring-boot-1.4.2.RELEASE</artifactId>
+                <artifactId>oss-common-dependencies-spring-boot-1.5.6.RELEASE</artifactId>
                 <version>${oss-common-dependencies.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
@@ -32,13 +32,13 @@
     </dependencyManagement>
 
     <properties>
-        <spring-boot-admin-starter-client.version>1.4.4</spring-boot-admin-starter-client.version>
+        <spring-boot-admin-starter-client.version>1.5.4</spring-boot-admin-starter-client.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>oss-lib-common-spring-boot-1.4.2.RELEASE</artifactId>
+            <artifactId>oss-lib-common-spring-boot-1.5.4.RELEASE</artifactId>
             <version>1.0.10.OSS-SNAPSHOT</version>
         </dependency>
 
