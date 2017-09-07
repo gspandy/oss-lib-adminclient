@@ -38,7 +38,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>oss-lib-common-spring-boot-1.5.4.RELEASE</artifactId>
+            <artifactId>oss-lib-common-spring-boot-1.5.6.RELEASE</artifactId>
             <version>1.0.10.OSS-SNAPSHOT</version>
         </dependency>
 
